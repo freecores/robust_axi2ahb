@@ -1,0 +1,57 @@
+
+VERIFY ((DATA_BITS==32) || (DATA_BITS==64))
+                 
+GROUP AXI_A is {
+    ID       ID_BITS                input
+    ADDR     ADDR_BITS              input
+    LEN      4                      input
+    SIZE     2                      input
+    VALID    1                      input
+    READY    1                      output
+}
+
+GROUP AXI_W is {
+    ID        ID_BITS                input
+    DATA      DATA_BITS              input
+    STRB      DATA_BITS/8            input
+    LAST      1                      input
+    VALID     1                      input
+    READY     1                      output
+}
+
+GROUP AXI_B is {
+    ID        ID_BITS                output
+    RESP      2                      output
+    VALID     1                      output
+    READY     1                      input
+}
+
+GROUP AXI_R is {
+    ID        ID_BITS                output
+    DATA      DATA_BITS              output
+    RESP      2                      output
+    LAST      1                      output
+    VALID     1                      output
+    READY     1                      input
+}
+
+GROUP AXI joins {
+    GROUP AXI_A prefix_AW
+    GROUP AXI_W prefix_W
+    GROUP AXI_B prefix_B
+    GROUP AXI_A prefix_AR
+    GROUP AXI_R prefix_R
+}
+
+                 
+GROUP AHB is {
+  HADDR   ADDR_BITS   input
+  HBURST  3           input
+  HSIZE   2           input
+  HTRANS  2           input
+  HWRITE  1           input
+  HWDATA  DATA_BITS   input
+  HRDATA  DATA_BITS   output
+  HREADY  1           output
+  HRESP   1           output
+}

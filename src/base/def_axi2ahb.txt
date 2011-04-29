@@ -1,0 +1,12 @@
+
+INCLUDE   def_axi2ahb_static.txt  
+
+SWAP      #FFD        #1              ## flip-flop delay
+
+SWAP      PREFIX      soc             ## prefix for all modules and file names
+
+SWAP      CMD_DEPTH   4               ## number of AXI command FIFO
+
+SWAP      ADDR_BITS   24              ## AXI and AHB address bits
+SWAP      DATA_BITS   32              ## AXI and AHB data bits
+SWAP      ID_BITS     4               ## AXI ID bits
