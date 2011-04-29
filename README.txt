@@ -14,7 +14,7 @@ In order to create the Verilog design use the run.sh script in the run directory
 
 The RobustVerilog top source file is axi2ahb.v, it calls the top definition file named def_axi2ahb.txt.
 
-The default definition file def_axi2ahb.txt generates a bridge with 8 APB slaves.
+The default definition file def_axi2ahb.txt generates a 32 data bit bridge.
 
 Changing the interconnect parameters should be made only in def_axi2ahb.txt in the src/base directory (changing slave num etc.).
 
