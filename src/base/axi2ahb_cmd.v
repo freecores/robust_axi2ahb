@@ -1,9 +1,9 @@
 
-OUTFILE PREFIX_axi2ahb_cmd.v
+OUTFILE PREFIX_cmd.v
   
 INCLUDE def_axi2ahb.txt
 
-module  PREFIX_axi2ahb_cmd (PORTS);
+module  PREFIX_cmd (PORTS);
 
    input 		  clk;
    input                  reset;

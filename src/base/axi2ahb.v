@@ -1,6 +1,6 @@
 
 INCLUDE def_axi2ahb.txt 
-OUTFILE PREFIX_axi2ahb.v
+OUTFILE PREFIX.v
 
 CHECK CONST(#FFD)
 CHECK CONST(PREFIX)
@@ -9,7 +9,7 @@ CHECK CONST(DATA_BITS)
 CHECK CONST(ID_BITS)
 CHECK CONST(CMD_DEPTH)
   
-module  PREFIX_axi2ahb (PORTS);
+module  PREFIX (PORTS);
 
    input              clk;
    input              reset;
@@ -43,7 +43,7 @@ module  PREFIX_axi2ahb (PORTS);
 
    
    CREATE axi2ahb_cmd.v
-     PREFIX_axi2ahb_cmd PREFIX_axi2ahb_cmd(
+     PREFIX_cmd PREFIX_cmd(
 					   .clk(clk),
 					   .reset(reset),
 					   .AWGROUP_AXI_A(AWGROUP_AXI_A),
@@ -62,7 +62,7 @@ module  PREFIX_axi2ahb (PORTS);
    
 
    CREATE axi2ahb_ctrl.v
-     PREFIX_axi2ahb_ctrl PREFIX_axi2ahb_ctrl(
+     PREFIX_ctrl PREFIX_ctrl(
 					     .clk(clk),
 					     .reset(reset),
 					     .GROUP_AHB(GROUP_AHB),
@@ -81,8 +81,8 @@ module  PREFIX_axi2ahb (PORTS);
 
    
    CREATE axi2ahb_wr_fifo.v
-     PREFIX_axi2ahb_wr_fifo 
-       PREFIX_axi2ahb_wr_fifo(
+     PREFIX_wr_fifo 
+       PREFIX_wr_fifo(
 			      .clk(clk),
 			      .reset(reset),
 			      .WGROUP_AXI_W(WGROUP_AXI_W),
@@ -99,8 +99,8 @@ module  PREFIX_axi2ahb (PORTS);
 
    
    CREATE axi2ahb_rd_fifo.v
-     PREFIX_axi2ahb_rd_fifo 
-       PREFIX_axi2ahb_rd_fifo(
+     PREFIX_rd_fifo 
+       PREFIX_rd_fifo(
 			      .clk(clk),
 			      .reset(reset),
 			      .RGROUP_AXI_R(RGROUP_AXI_R),
