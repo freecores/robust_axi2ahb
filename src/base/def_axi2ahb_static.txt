@@ -27,7 +27,7 @@
 ////                                                             ////
 //////////////////////////////////////////////////////////////////##>
 
-SWAP MODEL_NAME AXI2AHB bridge
+SWAP.GLOBAL MODEL_NAME AXI2AHB bridge
 
 VERIFY ((DATA_BITS==32) || (DATA_BITS==64))
                  

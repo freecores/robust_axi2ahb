@@ -31,7 +31,7 @@ REQUIRE(1.3)
 
 INCLUDE   def_axi2ahb_static.txt  
 
-SWAP           #FFD        #1              ## flip-flop delay
+SWAP.GLOBAL           #FFD        #1              ## flip-flop delay
 
 SWAP.USER      PREFIX      axi2ahb         ##Prefix for all modules and file names
 
