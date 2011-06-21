@@ -29,13 +29,14 @@
 
 SWAP.GLOBAL MODEL_NAME AXI2AHB bridge
 
-VERIFY ((DATA_BITS==32) || (DATA_BITS==64))
+VERIFY (DATA_BITS in 32, 64)  ##Supports 32 or 64 bits data bus
+VERIFY (SIZE_BITS in 2, 3) ##stub supports 32 or 64 bits data bus
                  
 GROUP AXI_A is {
     ID       ID_BITS                input
     ADDR     ADDR_BITS              input
     LEN      4                      input
-    SIZE     2                      input
+    SIZE     SIZE_BITS              input
     VALID    1                      input
     READY    1                      output
 }

@@ -31,6 +31,8 @@ REQUIRE(1.4)
 
 INCLUDE   def_axi2ahb_static.txt  
 
+STARTUSER
+  
 SWAP.GLOBAL           #FFD        #1              ## flip-flop delay
 
 SWAP.USER      PREFIX      axi2ahb         ##Prefix for all modules and file names
@@ -39,4 +41,5 @@ SWAP.USER      CMD_DEPTH   4               ##Number of AXI command FIFO
 
 SWAP.USER      ADDR_BITS   24              ##AXI and AHB address bits
 SWAP.USER      DATA_BITS   32              ##AXI and AHB data bits
+SWAP.USER      SIZE_BITS   2               ##AXI size bits
 SWAP.USER      ID_BITS     4               ##AXI ID bits
